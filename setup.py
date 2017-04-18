@@ -56,6 +56,7 @@ class Install(install):
         for dirpath, _, filenames in os.walk("hy"):
             for filename in filenames:
                 if filename.endswith(".hy"):
+                    print("Importing filename", filename)
                     importlib.import_module(
                         dirpath.replace("/", ".") + "." + filename[:-len(".hy")])
         install.run(self)
