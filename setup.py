@@ -53,7 +53,7 @@ class Install(install):
     def run(self):
         # Import each Hy module to ensure it's compiled.
         import os, importlib
-        for dirpath, _, filenames in os.walk("hy"):
+        for dirpath, _, filenames in os.walk("hy", topdown=False):
             for filename in filenames:
                 if filename.endswith(".hy"):
                     print("Importing filename", filename)
