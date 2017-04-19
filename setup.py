@@ -53,7 +53,7 @@ class Install(install):
     def run(self):
         # Import each Hy module to ensure it's compiled.
         import os, importlib
-        postpone_filenames = ('macros.py')
+        postpone_filenames = ('macros.hy')
         import_modules_later = []
         for dirpath, _, filenames in os.walk("hy"):
             for filename in filenames:
